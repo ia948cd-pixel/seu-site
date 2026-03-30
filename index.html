@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Open Graph -->
+    <title>Casa do Serralheiro | Acessórios e Soluções em Limeira</title>
+    <meta name="description" content="Tudo em acessórios para serralheria em Limeira. Fechaduras, roldanas, eletrodos e muito mais. Atendimento especializado e qualidade garantida.">
+    <meta property="og:title" content="Casa do Serralheiro | Acessórios e Soluções">
+    <meta property="og:image" content="https://i.imgur.com/kQF6nsc.png">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0a2e5c; 
+            --accent: #ff6b00;  
+            --bg-light: #ffffff;
+            --bg-alt: #f8fafd;  
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --white: #ffffff;
+            --header-height: 100px; 
+            --container-max: 1200px;
+            --transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        a { text-decoration: none; transition: var(--transition); }
+        ul { list-style: none; }
+
+        /* ================= HEADER ================= */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box img { 
+            height: 60px; 
+            width: auto; 
+            display: block; 
+        }
+
+        .nav-list { 
+            display: flex; 
+            gap: 30px; 
+            align-items: center;
+        }
+
+        .nav-list a {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .nav-list a:hover { color: var(--accent); }
+
+        .mobile-toggle { 
+            display: none; 
+            font-size: 1.8rem; 
+            cursor: pointer; 
+            color: var(--primary);
+        }
+
+        /* ================= HERO (80vh) ================= */
+        .hero {
+            height: 80vh; 
+            min-height: 600px;
+            padding-top: var(--header-height); 
+            background: linear-gradient(rgba(10, 46, 92, 0.85), rgba(10, 46, 92, 0.85)), 
+                        url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1600') center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;      
+            justify-content: center;   
+            color: var(--white);
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-content { 
+            max-width: 850px; 
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-content h1 { 
+            font-size: clamp(1.8rem, 5vw, 3rem); 
+            line-height: 1.2; 
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content p { 
+            font-size: clamp(1rem, 1.8vw, 1.15rem); 
+            max-width: 700px;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .btn-cta {
+            background: var(--accent);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.35);
+            text-transform: uppercase;
+        }
+
+        .btn-cta:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 12px 25px rgba(255, 107, 0, 0.45); 
+        }
+
+        .hero-proof {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.8);
+            margin-top: 10px;
+        }
+
+        .hero-proof span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-proof i {
+            color: #25d366;
+            font-size: 1rem;
+        }
+
+        /* ================= SEÇÕES GERAIS ================= */
+        section { padding: 90px 20px; }
+        .container { max-width: var(--container-max); margin: 0 auto; }
+
+        .section-header { margin-bottom: 50px; }
+        .section-header.center { text-align: center; }
+        .section-header.left { text-align: left; }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 12px;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 50px; height: 4px; background: var(--accent);
+            position: absolute; bottom: 0; border-radius: 10px;
+        }
+
+        .section-header.center h2::after { left: 50%; transform: translateX(-50%); }
+        .section-header.left h2::after { left: 0; }
+
+        /* Produtos */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            padding: 40px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+        .product-card:hover { transform: translateY(-8px); }
+        .product-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+
+        /* ================= SEÇÃO EXPERIÊNCIA E QUALIDADE (ATUALIZADA) ================= */
+        .about-section { background: var(--bg-alt); }
+        .about-flex { display: flex; align-items: center; gap: 60px; }
+        .about-img { flex: 1; }
+        .about-img img { width: 100%; border-radius: 12px; box-shadow: var(--shadow); }
+        
+        .about-text { flex: 1.2; }
+        .about-text p { 
+            margin-bottom: 25px; /* Espaçamento entre os parágrafos solicitado */
+            color: var(--text-muted);
+            font-size: 1.1rem; /* Tamanho do texto ajustado conforme solicitado */
+            line-height: 1.7;
+        }
+        .about-text p:last-child { margin-bottom: 0; }
+
+        /* ================= CONTATO & MAPA ================= */
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+            align-items: stretch;
+        }
+
+        .contact-form { 
+            background: var(--white); 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: var(--shadow); 
+            height: 100%;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;
+        }
+
+        .contact-form button {
+            width: 100%; background: var(--primary); color: white; padding: 18px; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; text-transform: uppercase;
+        }
+
+        .map-box {
+            width: 100%;
+            height: 100%; 
+            min-height: 450px; 
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-box iframe { 
+            width: 100%; height: 100%; border: 0; display: block;
+        }
+
+        /* Footer */
+        footer { background: #05162b; color: #a4b0be; padding: 70px 20px 40px; }
+        .footer-container { max-width: var(--container-max); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-link { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; color: #a4b0be; font-size: 0.9rem; }
+        .footer-link i { color: var(--accent); margin-top: 5px; }
+        .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; }
+
+        /* WhatsApp */
+        .whatsapp-fixed {
+            position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white;
+            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2.2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 1001;
+        }
+
+        @media (max-width: 992px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .map-box { min-height: 350px; }
+            .about-flex { flex-direction: column; text-align: center; }
+            .section-header.left { text-align: center; }
+            .section-header.left h2::after { left: 50%; transform: translateX(-50%); }
+        }
+
+        @media (max-width: 850px) {
+            .mobile-toggle { display: block; }
+            .nav-list {
+                display: none; position: absolute; top: var(--header-height); left: 0; width: 100%;
+                background: white; flex-direction: column; padding: 30px; gap: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .nav-list.active { display: flex; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="https://i.imgur.com/kQF6nsc.png" alt="Casa do Serralheiro Logo">
+            </div>
+            
+            <nav>
+                <div class="mobile-toggle" id="menu-trigger"><i class="fas fa-bars"></i></div>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Empresa</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Tudo para sua Serralheria em um só lugar</h1>
+            <p>Acessórios de alta qualidade, ferramentas e consumíveis com o melhor atendimento de Limeira.</p>
+            
+            <a href="https://wa.me/5519981986593" target="_blank" class="btn-cta">
+                <i class="fab fa-whatsapp"></i> Falar com Especialista
+            </a>
+
+            <div class="hero-proof">
+                <span><i class="fas fa-check-circle"></i> Referência em Limeira</span>
+                <span><i class="fas fa-check-circle"></i> Orçamento via WhatsApp</span>
+                <span><i class="fas fa-check-circle"></i> Qualidade Garantida</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossos Produtos -->
+    <section id="produtos">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Nossos Produtos</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Ferragens</h3>
+                    <p>Fechaduras e dobradiças com alta resistência e durabilidade para seus projetos.</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-dharmachakra"></i>
+                    <h3>Roldanas</h3>
+                    <p>Completa linha de roldanas para portões em nylon ou aço.</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Consumíveis</h3>
+                    <p>Eletrodos e materiais de soldagem de primeira linha para serralheiros profissionais.</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-cog"></i>
+                    <h3>Acessórios</h3>
+                    <p>Puxadores e componentes para o acabamento perfeito de sua obra ou projeto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Experiência e Qualidade (Texto Atualizado) -->
+    <section id="sobre" class="about-section">
+        <div class="container">
+            <div class="about-flex">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?auto=format&fit=crop&q=80&w=800" alt="Serralheria Profissional">
+                </div>
+                <div class="about-text">
+                    <div class="section-header left">
+                        <h2>Experiência e Qualidade</h2>
+                    </div>
+                    <p>Trabalhamos com dedicação para oferecer produtos e serviços que realmente fazem a diferença no dia a dia dos nossos clientes. Priorizamos qualidade, agilidade e um atendimento próximo, entendendo cada necessidade de forma personalizada.</p>
+                    
+                    <p>Nossa experiência nos permite entregar soluções seguras e eficientes, sempre com materiais de confiança e acabamento de alto padrão. Aqui, você encontra compromisso com excelência em cada detalhe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato e Mapa -->
+    <section id="contato">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Peça um Orçamento</h2>
+            </div>
+            <div class="contact-grid">
+                <form class="contact-form">
+                    <input type="text" placeholder="Nome Completo" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <textarea rows="6" placeholder="Como podemos ajudar no seu projeto?" required></textarea>
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.20120516943!2d-47.41113692376913!3d-22.5341253246342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8651a3765e94b%3A0x67341851e58a7be!2sRua%20Fl%C3%A1vio%20Roque%20da%20Silveira%2C%20109%20-%20Jardim%20Ipiranga%2C%20Limeira%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1711800000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Casa do Serralheiro</h4>
+                <p>O parceiro ideal para sua serralheria em Limeira/SP.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <a href="tel:19981986593" class="footer-link"><i class="fas fa-phone-alt"></i> (19) 98198-6593</a>
+                <a href="mailto:casadoserralheirolimeira@gmail.com?subject=Site&body=Olá" class="footer-link"><i class="fas fa-envelope"></i> casadoserralheirolimeira@gmail.com</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Flávio+Roque+da+Silveira,+109+Jardim+Ipiranga+Limeira+SP" target="_blank" class="footer-link"><i class="fas fa-map-marker-alt"></i> Rua Flávio Roque da Silveira, 109 - Limeira/SP</a>
+            </div>
+            <div class="footer-col">
+                <h4>Horário</h4>
+                <p>Seg a Sex: 07:30 – 17:30</p>
+                <p>Sáb: 07:30 – 12:30</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Casa do Serralheiro. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5519981986593" class="whatsapp-fixed" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const trigger = document.getElementById('menu-trigger');
+        const list = document.getElementById('nav-list');
+        trigger.addEventListener('click', () => list.classList.toggle('active'));
+        document.querySelectorAll('.nav-list a').forEach(l => l.addEventListener('click', () => list.classList.remove('active')));
+    </script>
+</body>
+</html>
