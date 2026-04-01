@@ -1,5 +1,3 @@
---- START OF FILE text/html ---
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,6 +10,10 @@
     <meta property="og:title" content="Casa do Serralheiro | Acessórios e Soluções">
     <meta property="og:image" content="https://i.imgur.com/kQF6nsc.png">
     <meta property="og:type" content="website">
+
+    <!-- FAVICON (Ícone da Aba) -->
+    <link rel="icon" type="image/png" href="https://i.imgur.com/TUwN00c.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/TUwN00c.png">
 
     <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,7 +105,7 @@
             color: var(--primary);
         }
 
-        /* ================= HERO (80vh) ================= */
+        /* ================= HERO ================= */
         .hero {
             height: 80vh; 
             min-height: 600px;
@@ -226,7 +228,7 @@
         .product-card:hover { transform: translateY(-8px); }
         .product-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
 
-        /* ================= SEÇÃO EXPERIÊNCIA E QUALIDADE ================= */
+        /* ================= SEÇÃO SOBRE ================= */
         .about-section { background: var(--bg-alt); }
         .about-flex { display: flex; align-items: center; gap: 60px; }
         .about-img { flex: 1; }
@@ -239,9 +241,8 @@
             font-size: 1.1rem; 
             line-height: 1.7;
         }
-        .about-text p:last-child { margin-bottom: 0; }
 
-        /* ================= CONTATO & MAPA ================= */
+        /* ================= CONTATO ================= */
         .contact-grid { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
@@ -257,70 +258,21 @@
             height: 100%;
         }
 
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-
+        .contact-form .form-group { margin-bottom: 20px; }
+        .contact-form label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary); }
         .contact-form input, .contact-form textarea {
-            width: 100%; 
-            padding: 15px; 
-            border: 1px solid #e1e8ef; 
-            border-radius: 8px; 
-            font-family: inherit;
-            background: #fdfdfd;
-            transition: border-color 0.3s;
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: #fff;
+            width: 100%; padding: 15px; border: 1px solid #e1e8ef; border-radius: 8px; font-family: inherit;
         }
 
         .contact-form button {
-            width: 100%; 
-            background: #25d366; 
-            color: white; 
-            padding: 18px; 
-            border: none; 
-            border-radius: 8px; 
-            font-weight: 800; 
-            cursor: pointer; 
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .contact-form button:hover {
-            background: #1eb957;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            width: 100%; background: #25d366; color: white; padding: 18px; border: none; border-radius: 8px; 
+            font-weight: 800; cursor: pointer; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px;
         }
 
         .map-box {
-            width: 100%;
-            height: 100%; 
-            min-height: 450px; 
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
+            width: 100%; height: 100%; min-height: 450px; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow);
         }
-
-        .map-box iframe { 
-            width: 100%; height: 100%; border: 0; display: block;
-        }
+        .map-box iframe { width: 100%; height: 100%; border: 0; display: block; }
 
         /* Footer */
         footer { background: #05162b; color: #a4b0be; padding: 70px 20px 40px; }
@@ -329,7 +281,7 @@
         .footer-link i { color: var(--accent); margin-top: 5px; }
         .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; }
 
-        /* WhatsApp */
+        /* WhatsApp Flutuante */
         .whatsapp-fixed {
             position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white;
             width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -338,10 +290,7 @@
 
         @media (max-width: 992px) {
             .contact-grid { grid-template-columns: 1fr; }
-            .map-box { min-height: 350px; }
             .about-flex { flex-direction: column; text-align: center; }
-            .section-header.left { text-align: center; }
-            .section-header.left h2::after { left: 50%; transform: translateX(-50%); }
         }
 
         @media (max-width: 850px) {
@@ -424,7 +373,7 @@
         </div>
     </section>
 
-    <!-- Seção Experiência e Qualidade -->
+    <!-- Seção Sobre -->
     <section id="sobre" class="about-section">
         <div class="container">
             <div class="about-flex">
@@ -436,21 +385,19 @@
                         <h2>Experiência e Qualidade</h2>
                     </div>
                     <p>Trabalhamos com dedicação para oferecer produtos e serviços que realmente fazem a diferença no dia a dia dos nossos clientes. Priorizamos qualidade, agilidade e um atendimento próximo, entendendo cada necessidade de forma personalizada.</p>
-                    
-                    <p>Nossa experiência nos permite entregar soluções seguras e eficientes, sempre com materiais de confiança e acabamento de alto padrão. Aqui, você encontra compromisso com excelência em cada detalhe.</p>
+                    <p>Aqui, você encontra compromisso com excelência em cada detalhe, desde o parafuso até as soluções mais complexas para sua obra.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contato e Mapa -->
+    <!-- Contato -->
     <section id="contato">
         <div class="container">
             <div class="section-header center">
                 <h2>Peça um Orçamento</h2>
             </div>
             <div class="contact-grid">
-                <!-- Formulário Atualizado para WhatsApp -->
                 <form id="formOrcamento" class="contact-form">
                     <div class="form-group">
                         <label for="nome">Nome Completo</label>
@@ -462,10 +409,10 @@
                     </div>
                     <div class="form-group">
                         <label for="mensagem">Descrição do Orçamento</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva os produtos ou serviços que você precisa..." required></textarea>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="O que você precisa?" required></textarea>
                     </div>
                     <button type="submit">
-                        <i class="fab fa-whatsapp"></i> Solicitar Orçamento pelo WhatsApp
+                        <i class="fab fa-whatsapp"></i> Solicitar via WhatsApp
                     </button>
                 </form>
 
@@ -506,33 +453,20 @@
     </a>
 
     <script>
-        // Toggle Menu Mobile
+        // Menu Mobile
         const trigger = document.getElementById('menu-trigger');
         const list = document.getElementById('nav-list');
         trigger.addEventListener('click', () => list.classList.toggle('active'));
         document.querySelectorAll('.nav-list a').forEach(l => l.addEventListener('click', () => list.classList.remove('active')));
 
-        // Lógica do Formulário de WhatsApp
+        // WhatsApp Form
         document.getElementById('formOrcamento').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o recarregamento da página
-
-            // Captura dos campos
+            event.preventDefault();
             const nome = document.getElementById('nome').value;
             const telefone = document.getElementById('telefone').value;
             const mensagem = document.getElementById('mensagem').value;
-            const whatsappNumber = "5519981986593";
-
-            // Montagem da mensagem
-            const textoMensagem = `Olá, gostaria de solicitar um orçamento.\n\n` +
-                                 `*Nome:* ${nome}\n` +
-                                 `*Telefone:* ${telefone}\n` +
-                                 `*Mensagem:* ${mensagem}`;
-
-            // Codificação para URL
-            const urlFinal = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textoMensagem)}`;
-
-            // Abertura do WhatsApp em nova aba
-            window.open(urlFinal, '_blank');
+            const texto = `Olá, gostaria de um orçamento.\n*Nome:* ${nome}\n*Telefone:* ${telefone}\n*Mensagem:* ${mensagem}`;
+            window.open(`https://wa.me/5519981986593?text=${encodeURIComponent(texto)}`, '_blank');
         });
     </script>
 </body>
