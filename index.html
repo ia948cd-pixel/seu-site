@@ -1,3 +1,5 @@
+--- START OF FILE text/html ---
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -224,7 +226,7 @@
         .product-card:hover { transform: translateY(-8px); }
         .product-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
 
-        /* ================= SEÇÃO EXPERIÊNCIA E QUALIDADE (ATUALIZADA) ================= */
+        /* ================= SEÇÃO EXPERIÊNCIA E QUALIDADE ================= */
         .about-section { background: var(--bg-alt); }
         .about-flex { display: flex; align-items: center; gap: 60px; }
         .about-img { flex: 1; }
@@ -232,9 +234,9 @@
         
         .about-text { flex: 1.2; }
         .about-text p { 
-            margin-bottom: 25px; /* Espaçamento entre os parágrafos solicitado */
+            margin-bottom: 25px; 
             color: var(--text-muted);
-            font-size: 1.1rem; /* Tamanho do texto ajustado conforme solicitado */
+            font-size: 1.1rem; 
             line-height: 1.7;
         }
         .about-text p:last-child { margin-bottom: 0; }
@@ -255,12 +257,56 @@
             height: 100%;
         }
 
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
         .contact-form input, .contact-form textarea {
-            width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;
+            width: 100%; 
+            padding: 15px; 
+            border: 1px solid #e1e8ef; 
+            border-radius: 8px; 
+            font-family: inherit;
+            background: #fdfdfd;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: #fff;
         }
 
         .contact-form button {
-            width: 100%; background: var(--primary); color: white; padding: 18px; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; text-transform: uppercase;
+            width: 100%; 
+            background: #25d366; 
+            color: white; 
+            padding: 18px; 
+            border: none; 
+            border-radius: 8px; 
+            font-weight: 800; 
+            cursor: pointer; 
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-form button:hover {
+            background: #1eb957;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
         }
 
         .map-box {
@@ -378,7 +424,7 @@
         </div>
     </section>
 
-    <!-- Seção Experiência e Qualidade (Texto Atualizado) -->
+    <!-- Seção Experiência e Qualidade -->
     <section id="sobre" class="about-section">
         <div class="container">
             <div class="about-flex">
@@ -404,12 +450,25 @@
                 <h2>Peça um Orçamento</h2>
             </div>
             <div class="contact-grid">
-                <form class="contact-form">
-                    <input type="text" placeholder="Nome Completo" required>
-                    <input type="email" placeholder="E-mail" required>
-                    <textarea rows="6" placeholder="Como podemos ajudar no seu projeto?" required></textarea>
-                    <button type="submit">Enviar Mensagem</button>
+                <!-- Formulário Atualizado para WhatsApp -->
+                <form id="formOrcamento" class="contact-form">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone / WhatsApp</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(19) 00000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Descrição do Orçamento</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva os produtos ou serviços que você precisa..." required></textarea>
+                    </div>
+                    <button type="submit">
+                        <i class="fab fa-whatsapp"></i> Solicitar Orçamento pelo WhatsApp
+                    </button>
                 </form>
+
                 <div class="map-box">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.20120516943!2d-47.41113692376913!3d-22.5341253246342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8651a3765e94b%3A0x67341851e58a7be!2sRua%20Fl%C3%A1vio%20Roque%20da%20Silveira%2C%20109%20-%20Jardim%20Ipiranga%2C%20Limeira%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1711800000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
                 </div>
@@ -427,7 +486,7 @@
             <div class="footer-col">
                 <h4>Contato</h4>
                 <a href="tel:19981986593" class="footer-link"><i class="fas fa-phone-alt"></i> (19) 98198-6593</a>
-                <a href="mailto:casadoserralheirolimeira@gmail.com?subject=Site&body=Olá" class="footer-link"><i class="fas fa-envelope"></i> casadoserralheirolimeira@gmail.com</a>
+                <a href="mailto:casadoserralheirolimeira@gmail.com" class="footer-link"><i class="fas fa-envelope"></i> casadoserralheirolimeira@gmail.com</a>
                 <a href="https://www.google.com/maps/search/?api=1&query=Rua+Flávio+Roque+da+Silveira,+109+Jardim+Ipiranga+Limeira+SP" target="_blank" class="footer-link"><i class="fas fa-map-marker-alt"></i> Rua Flávio Roque da Silveira, 109 - Limeira/SP</a>
             </div>
             <div class="footer-col">
@@ -441,16 +500,40 @@
         </div>
     </footer>
 
-    <!-- WhatsApp -->
+    <!-- WhatsApp Flutuante -->
     <a href="https://wa.me/5519981986593" class="whatsapp-fixed" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
+        // Toggle Menu Mobile
         const trigger = document.getElementById('menu-trigger');
         const list = document.getElementById('nav-list');
         trigger.addEventListener('click', () => list.classList.toggle('active'));
         document.querySelectorAll('.nav-list a').forEach(l => l.addEventListener('click', () => list.classList.remove('active')));
+
+        // Lógica do Formulário de WhatsApp
+        document.getElementById('formOrcamento').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o recarregamento da página
+
+            // Captura dos campos
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const whatsappNumber = "5519981986593";
+
+            // Montagem da mensagem
+            const textoMensagem = `Olá, gostaria de solicitar um orçamento.\n\n` +
+                                 `*Nome:* ${nome}\n` +
+                                 `*Telefone:* ${telefone}\n` +
+                                 `*Mensagem:* ${mensagem}`;
+
+            // Codificação para URL
+            const urlFinal = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textoMensagem)}`;
+
+            // Abertura do WhatsApp em nova aba
+            window.open(urlFinal, '_blank');
+        });
     </script>
 </body>
 </html>
