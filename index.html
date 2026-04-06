@@ -247,7 +247,7 @@
             display: grid; 
             grid-template-columns: 1fr 1fr; 
             gap: 40px; 
-            align-items: stretch;
+            align-items: center; /* Alinhado centralizado verticalmente */
         }
 
         .contact-form { 
@@ -255,7 +255,7 @@
             padding: 40px; 
             border-radius: 15px; 
             box-shadow: var(--shadow); 
-            height: 100%;
+            height: auto;
         }
 
         .contact-form .form-group { margin-bottom: 20px; }
@@ -268,11 +268,6 @@
             width: 100%; background: #25d366; color: white; padding: 18px; border: none; border-radius: 8px; 
             font-weight: 800; cursor: pointer; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px;
         }
-
-        .map-box {
-            width: 100%; height: 100%; min-height: 450px; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow);
-        }
-        .map-box iframe { width: 100%; height: 100%; border: 0; display: block; }
 
         /* Footer */
         footer { background: #05162b; color: #a4b0be; padding: 70px 20px 40px; }
@@ -398,6 +393,7 @@
                 <h2>Peça um Orçamento</h2>
             </div>
             <div class="contact-grid">
+                <!-- Formulário -->
                 <form id="formOrcamento" class="contact-form">
                     <div class="form-group">
                         <label for="nome">Nome Completo</label>
@@ -416,9 +412,34 @@
                     </button>
                 </form>
 
-                <div class="map-box">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.20120516943!2d-47.41113692376913!3d-22.5341253246342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8651a3765e94b%3A0x67341851e58a7be!2sRua%20Fl%C3%A1vio%20Roque%20da%20Silveira%2C%20109%20-%20Jardim%20Ipiranga%2C%20Limeira%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1711800000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                <!-- NOVO MAPA GOOGLE MAPS -->
+                <div style="width:100%; max-width:100%; margin:auto;">
+                  <div style="
+                    position: relative;
+                    padding-bottom: 56.25%; 
+                    height: 0;
+                    overflow: hidden;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                  ">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.7721347618967!2d-47.402031625527364!3d-22.58762422654096!2m3!1f0!2f0!3f0!2m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c881e168620401%3A0xb548ac36ae8055b0!2sCasa%20do%20Serralheiro%20Limeira!5e0!3m2!1spt-BR!2sbr!4v1775491361437!5m2!1spt-BR!2sbr"
+                      style="
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        height:100%;
+                        border:0;
+                        filter: grayscale(0.2) contrast(1.1);
+                      "
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                  </div>
                 </div>
+                <!-- FIM DO MAPA -->
             </div>
         </div>
     </section>
